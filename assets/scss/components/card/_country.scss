@@ -1,0 +1,21 @@
+.country-card {
+  display: block;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__flag {
+    width: 100%;
+    height: 128px;
+    object-fit: contain;
+  }
+
+  &__info {
+    &-title {
+      margin-right: 0.2rem;
+    }
+  }
+}

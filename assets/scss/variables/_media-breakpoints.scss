@@ -1,0 +1,46 @@
+@use "sass:map";
+
+$breakpoints: (
+        xs: 576px,
+        sm: 768px,
+        md: 992px,
+        lg: 1280px,
+        xl: 1440px,
+);
+
+$directions: (
+        height: height,
+        width: width,
+);
+
+@mixin media-breakpoint-up($breakpoint, $direction: width) {
+  @if map-has-key($directions, $direction) {
+    @if map-has-key($breakpoints, $breakpoint) {
+      $breakpoint-value: map.get($breakpoints, $breakpoint);
+
+      @media (min-#{$direction}: $breakpoint-value) {
+        @content;
+      }
+    } @else {
+      @warn "Invalid breakpoint: #{$breakpoint}.";
+    }
+  } @else {
+    @warn "Invalid direction: #{$direction}.";
+  }
+}
+
+@mixin media-breakpoint-down($breakpoint, $direction: width) {
+  @if map-has-key($directions, $direction) {
+    @if map-has-key($breakpoints, $breakpoint) {
+      $breakpoint-value: map.get($breakpoints, $breakpoint);
+
+      @media (max-#{$direction}: $breakpoint-value - 1) {
+        @content;
+      }
+    } @else {
+      @warn "Invalid breakpoint: #{$breakpoint}.";
+    }
+  } @else {
+    @warn "Invalid direction: #{$direction}.";
+  }
+}

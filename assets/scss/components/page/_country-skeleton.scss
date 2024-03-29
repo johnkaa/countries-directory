@@ -1,0 +1,16 @@
+.country-skeleton {
+  &__title {
+    height: 48px;
+    margin-bottom: 1rem;
+  }
+
+  &__flag {
+    height: 170px;
+    margin-bottom: 1rem;
+  }
+
+  &__info-item {
+    height: 24px;
+    margin-bottom: 0.2rem;
+  }
+}

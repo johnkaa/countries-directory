@@ -1,0 +1,17 @@
+.country {
+  &__title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  &__flag {
+    margin-bottom: 1rem;
+  }
+
+  &__info {
+    &-value_link {
+      text-decoration: underline;
+    }
+  }
+}
