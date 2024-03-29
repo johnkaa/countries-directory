@@ -1,6 +1,7 @@
 <template>
   <UContainer class="default-layout">
     <GeneralHeader class="default-layout__header" />
+
     <NuxtPage />
   </UContainer>
 </template>
