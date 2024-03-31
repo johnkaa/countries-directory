@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     head: {
       title: "Countries directory",
     },
-    baseURL: "/countries-directory/",
   },
   modules: ["@nuxtjs/eslint-module", "@nuxt/image", "@nuxt/ui", "@pinia/nuxt"],
 });
