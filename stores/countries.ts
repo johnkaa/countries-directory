@@ -37,14 +37,16 @@ export const useCountries = defineStore("countries", {
         );
         const fetchedCountries = data.value as ICountry[];
 
-        const byName = fetchedCountries.filter((country) =>
-          country.name.common.toLowerCase().includes(searchValue.toLowerCase()),
-        );
-        const byCode = fetchedCountries.filter((country) =>
-          country.cca3.toLowerCase().includes(searchValue.toLowerCase()),
+        // search by name and country
+        const filteredCountries = fetchedCountries.filter(
+          (country) =>
+            country.name.common
+              .toLowerCase()
+              .includes(searchValue.toLowerCase()) ||
+            country.cca3.toLowerCase().includes(searchValue.toLowerCase()),
         );
 
-        this.countries = [...byName, ...byCode];
+        this.countries = [...new Set(filteredCountries)];
       } catch (e) {
         console.error(e);
       } finally {
