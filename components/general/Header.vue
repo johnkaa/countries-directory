@@ -22,7 +22,7 @@ async function submitSearch() {
       <UInput
         v-model="searchState.searchValue"
         class="header__form-input"
-        placeholder="Search by name or cca3"
+        placeholder="Search"
       />
 
       <UButton class="header__form-button" type="submit">Search</UButton>
